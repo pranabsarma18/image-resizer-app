@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+        </div>
+        <h1>Image Resizer</h1>
+        <form action="/resize" method="post" enctype="multipart/form-data">
+            <label for="file" class="file-label">Choose Image</label>
+            <input type="file" id="file" name="file" accept="image/*" required onchange="displayFileName()">
+
+            <div id="file-name-display" class="file-name"></div>
+
+            <label for="width">Width (pixels):</label>
+            <input type="number" name="width" value="300" required>
+
+            <label for="height">Height (pixels):</label>
+            <input type="number" name="height" value="300" required>
+
+            <label for="target_size_kb">Target Size (KB):</label>
+            <input type="number" name="target_size_kb" value="1024" required>
+
+            <button type="submit">Resize</button>
+        </form>
+
+        {% if resized_image %}
+        <h2>Resized Image:</h2>
+        <img src="data:image/jpeg;base64,{{ resized_image }}" alt="Resized Image">
+        {% endif %}
+        <footer>
+            <p>&copy; 2023 Image Resizer. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        function displayFileName() {
+            const fileInput = document.getElementById('file');
+            const fileNameDisplay = document.getElementById('file-name-display');
+            fileNameDisplay.textContent = fileInput.files[0].name;
+        }
+    </script>
+</body>
+
+</html>
