@@ -1,7 +1,5 @@
 # Image Resize App
 
-Image Resizer is a simple web application that allows you to resize and compress images easily. It provides a user-friendly interface for selecting an image, specifying dimensions, and target size, and then generates a resized and compressed version of the image.
-
 ## Overview
 
 The Image Resize App is a simple web application built with Flask that allows users to upload images, specify dimensions, and resize them. It provides an easy-to-use interface for resizing images and ensures that the resulting file size meets user-specified criteria.
@@ -16,7 +14,7 @@ The Image Resize App is a simple web application built with Flask that allows us
 
 ## How to Use
 
-1. Visit the [Image Resize App](https://your-app-name.herokuapp.com/) (replace with your Heroku app URL).
+1. Visit the [Image Resize App](https://image-resize-18.live/).
 2. Click on the "Choose File" button to select an image for upload.
 3. Enter the desired height and width dimensions in pixels.
 4. Set the maximum file size limit in kilobytes (KB).
